@@ -39,6 +39,8 @@ class HangmanGame:
     def move(self):
         print(self.guessed)
         letter = input("Letter: ")
+        if letter == '':
+            return
         letter = letter[0].lower()
         if letter in self.word and letter not in self.used:
             indexes = self.find(letter)
@@ -51,7 +53,7 @@ class HangmanGame:
             self.used.append(letter)
         else:
             print("Wrong")
-            print(self.errors)
+            print(f"Lives left: {self.errors}")
             self.errors -= 1
 
         if '_' not in self.guessed:
