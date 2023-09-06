@@ -60,5 +60,5 @@ class HangmanGame:
             print("You won!")
             return
 
-
-game = HangmanGame()
+if __name__ == "__main__":
+    game = HangmanGame()
